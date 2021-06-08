@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Sourabh's site</title>
+<style>
+body{
+	
+	background-image:url("https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-repeat:no-repeat;
+    background-size: cover;
+  overflow: hidden;
+
+}
+form{
+text-align: center;
+color:Red;
+
+}
+h1{
+	padding:5px;
+	color : white;
+	font-family: bahnschrift;
+}
+h3{
+	padding:5px;
+	color : white;
+	font-family: bahnschrift;
+}
+.container {
+  display: flex;
+  margin-top: 50px;
+  
+}
+
+.item {
+  position: relative;
+  display: block;
+  flex: 1 1 0px;
+  transition: transform 500ms;
+}
+
+.container .item:focus,
+.container .item:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+
+
+.item img {
+  display: block;
+  max-width: 100%;
+}
+ul {
+  
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  
+ 
+}
+</style>
+
+</head>
+<body >
+<ul>
+  <li><a href="#home" class="active" style="font-size:150%;" >Home</a></li>
+  <li><a href="{{url_for('about_us')}}" target="_blank" href="#About Us" style="font-size:150%;">About Us</a></li>
+  <li><a href="{{url_for('Contact_Us')}}" target="_blank" href="#contact Us" style="font-size:150%;">Contact Us</a></li>
+</ul>
+<form method = "POST">
+
+	<h1>Food Recommendation system</h1>
+	<h2>Let me recommend you some delicious dishes!!</h2>
+	 <input type="text" name="fname" class="dish form-control" id="fname" autocomplete="off" placeholder="ENTER THE DISH NAME" 
+  style="background-color: #ffffff;border-color:#ffffff;height: 5%;width: 60%;color: #181818" required="required" />
+	<br><br>
+  <input type = "submit" value = "Enter" style="background-color:red; width: 10%;height: 5%; color: white;"/>
+  <h3>{% for your_list_element in answer %}
+      <p style="color:white;">{{ your_list_element }}</p>
+  {% endfor %}</h3>
+  <div class="footer" style="height:50%;width:100%;font-size:180%;">Made <span style="font-size:500%;color:red;"></span>by Sourabh</div>
+</form>
+
+
+</body>
+</html>
